@@ -7,17 +7,18 @@ import List from './Components/List'
 import Footer from './Components/Footer'
 
 function App() {
-
   const [todos, setTodos] = useState([])
+
   const addTodo = todo => setTodos([...todos, todo])
+  const removeTodo = idx => setTodos(todos.filter((todo, id) => id !== idx))
 
   return (
     <section className="todoapp">
       <Header addTodo={addTodo}></Header>
-      <List todos={todos}></List>
+      <List todos={todos} removeTodo={removeTodo}></List>
       <Footer></Footer>
     </section>
   );
 }
 
-export default App;
+export default App

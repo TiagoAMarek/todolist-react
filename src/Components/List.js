@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function List({ todos }) {
-  
+export default function List({ todos, removeTodo }) {
+
   const displayBlock = {
     display: 'block',
   }
@@ -16,7 +16,7 @@ export default function List({ todos }) {
             <div className="view">
               <input className="toggle" type="checkbox" />
               <label>{ todo }</label>
-              <button className="destroy"></button>
+              <button className="destroy" onClick={() => removeTodo(index)}></button>
             </div>
           </li>
         ))}
